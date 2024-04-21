@@ -7,22 +7,19 @@ require("dotenv").config();
 const { DEPLOYER_WALLET, ETHERSCAN_API_KEY } = process.env;
 
 module.exports = {
-  defaultNetwork: "hardhat",
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
   },
-  solidity: {
-    version: "0.8.20",
-    setting: {},
-  },
+  solidity: "0.8.20",
   networks: {
+    hardhat: {},
     bscTestnet: {
       url: "https://bsc-testnet.blockpi.network/v1/rpc/public",
       chainId: 97,
       accounts: [DEPLOYER_WALLET],
     },
-    sepoliaTestnet: {
-      url: "https://1rpc.io/sepolia",
+    sepolia: {
+      url: "https://eth-sepolia.g.alchemy.com/v2/uCORp6v8AFu144PO-uqbHfziTfmaNml7",
       chainId: 11155111,
       accounts: [DEPLOYER_WALLET],
     },
